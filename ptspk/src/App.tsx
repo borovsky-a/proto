@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { Container } from "semantic-ui-react";
 import { useAppDispatch, useAppSelector } from "./hooks/app";
 import {
     setIDLEAppStatus
   } from './store/slices/appSlice';
+import SyncManager from "./ui/features/syncManager/SyncManager";
 
 
 export const App = () => {
@@ -22,7 +24,7 @@ export const App = () => {
             case 'loading':
                 return <div>'loading'</div>;
             case 'idle':
-                return <div>'idle'</div>;
+                return <SyncManager/>;
             case 'failed':
                 return <div>'failed'</div>;
             default:
@@ -30,7 +32,7 @@ export const App = () => {
         }
     }
 
-    return (<>
+    return (<Container>
         {renderSwitch()}
-    </>)
+    </Container>)
 }

@@ -5,12 +5,15 @@ import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 import { store } from './store/store';
 
+import 'semantic-ui-css/semantic.min.css'
+//https://semantic-ui.com/introduction/integrations.html
+//https://react.semantic-ui.com/
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
     <React.StrictMode>
-        <Provider store={store}>
+        <Provider store={store}>            
            <App />
         </Provider>
     </React.StrictMode>

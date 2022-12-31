@@ -1,10 +1,11 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 import appReducer from "./slices/appSlice";
-
+import syncManagerReducer from "./slices/syncManagerSlice";
 
 export const store = configureStore({
     reducer: {
       app: appReducer,
+      syncManager: syncManagerReducer
     },
 });
   
