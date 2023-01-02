@@ -1,4 +1,4 @@
-import { JobListEntity } from "../types";
+import { JobListEntity } from "types/jobs";
 
 export const fakeJobs: JobListEntity[] = [
     {
@@ -7,10 +7,10 @@ export const fakeJobs: JobListEntity[] = [
        name: 'CheckListUpdate',
        displayName:'Обновление контрольных списков',
        status: 'idle',
-       executionTime: '10.10.2022 00:00:05',
-       executionProcessTime: '00:00:05',
+       startTime: '10.10.2022 00:00:05',
+       executionTime: '00:00:05',
        executionResult: 'success',
-       nextExecutionTime: '11.10.2022 00:00:05',
+       nextTime: '11.10.2022 00:00:05',
        percentageCompleted: 100
     },
     {
@@ -18,11 +18,11 @@ export const fakeJobs: JobListEntity[] = [
        enabledFlag: true,
        name: 'BinCheckListUpdate',
        displayName:'Обновление баз электронных документов',
-       status: 'error',
-       executionTime: '10.10.2022 00:00:05',
-       executionProcessTime: '00:00:05',
+       status: 'process',
+       startTime: '10.10.2022 00:00:05',
+       executionTime: '00:00:05',
        executionResult: 'success',
-       nextExecutionTime: '11.10.2022 00:00:05',
+       nextTime: '11.10.2022 00:00:05',
        percentageCompleted: 100
     },
     {
@@ -31,10 +31,10 @@ export const fakeJobs: JobListEntity[] = [
        name: 'BorderCrossing',
        displayName:'Синхронизация РПГГ',
        status: 'stopped',
-       executionTime: '10.10.2022 00:00:05',
-       executionProcessTime: '00:00:05',
+       startTime: '10.10.2022 00:00:05',
+       executionTime: '00:00:05',
        executionResult: 'success',
-       nextExecutionTime: '11.10.2022 00:00:05',
+       nextTime: '11.10.2022 00:00:05',
        percentageCompleted: 100
     },
     {
@@ -43,10 +43,10 @@ export const fakeJobs: JobListEntity[] = [
        name: 'BorderCrossingLogs',
        displayName:'Синхронизация жургалов РПГГ',
        status: 'idle',
-       executionTime: '10.10.2022 00:00:05',
-       executionProcessTime: '00:00:05',
+       startTime: '10.10.2022 00:00:05',
+       executionTime: '00:00:05',
        executionResult: 'success',
-       nextExecutionTime: '11.10.2022 00:00:05',
+       nextTime: '11.10.2022 00:00:05',
        percentageCompleted: 100
     }
 

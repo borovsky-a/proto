@@ -1,8 +1,9 @@
-import React, { useReducer } from "react";
+import  { useEffect, useReducer } from "react";
 import _ from 'lodash';
 
 export type SortTableDirection = 'ascending' | 'descending' | undefined;
 export const CHANGE_SORT = 'CHANGE_SORT';
+export const CHANGE_DATA = 'CHANGE_DATA';
 type SortTableArgs = {
     column: string | null,
     data: any[],
@@ -20,14 +21,20 @@ const sortableReducer = (state: any, action: any) => {
              }
           }
           return {
+            ...state,
              column: action.column,
              data: _.sortBy(state.data, [action.column]),
              direction: 'ascending',
           }
+          case CHANGE_DATA :
+            {
+               return  {...state, data: action.data};
+            }
        default:
           throw new Error()
     }
  }
+ 
 export function useSortTable<T>(items: any[]) {
 
     const initState: SortTableArgs ={
@@ -44,11 +51,15 @@ export function useSortTable<T>(items: any[]) {
     const onClick = (column: string) => {
       return ()=>  dispatch({ type: CHANGE_SORT, column: column })
     }
+
+    useEffect(()=>{
+      dispatch({ type: CHANGE_DATA, data: items });
+    },[items]);
+
     return {
         column: state.column,
         data: state.data as T[],
         direction: state.direction,
-        dispatch: dispatch,
         onSort,
         onClick
     }

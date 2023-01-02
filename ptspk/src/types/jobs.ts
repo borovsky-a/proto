@@ -1,4 +1,4 @@
-export type JobStatus = 'idle' | 'process' |'error' | 'stopped';
+export type JobStatus = 'idle' | 'process' | 'stopped';
 export type JobResult = 'unknown'|'success'| 'error';
 
 export interface JobListEntity {
@@ -7,9 +7,9 @@ export interface JobListEntity {
    name: string;
    displayName:string;
    status: JobStatus;
+   startTime: string;
    executionTime: string;
-   executionProcessTime: string;
    executionResult: JobResult;
-   nextExecutionTime: string;   
+   nextTime: string;   
    percentageCompleted: number;
 }

@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "./hooks/app";
 import {
     setIDLEAppStatus
   } from './store/slices/appSlice';
-import SyncManager from "./ui/features/syncManager/SyncManager";
+import SyncManager from "./ui/features/SyncManager";
 
 
 export const App = () => {
@@ -17,8 +17,9 @@ export const App = () => {
     useEffect(()=>{
         setTimeout(() => {
           dispatch(setIDLEAppStatus())  
-        }, 3000);
-    },[]);
+        }, 0);
+    },[dispatch]);
+    
     const renderSwitch = () => {
         switch (appStatus) {
             case 'loading':
